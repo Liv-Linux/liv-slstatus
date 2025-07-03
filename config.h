@@ -65,14 +65,14 @@ static const char unknown_str[] = "n/a";
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
- * wifi_perc           WiFi signal in percent          interface name (wlan0)
+ * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ uptime, " UP: %s | ",              NULL },
- 	{ ram_perc, "RAM: %s% | ",           NULL },
-	{ cpu_perc, "CPU: %s% | ",           NULL },
-	//{ vol_icon, "VOL: %s | ",           "/dev/snd" },
-	{ run_command, "VOL: %s | ", 	    "amixer get Master | grep -o '[0-9]*%' | head -n 1"},
-	{ datetime, "DATE: %s |",           "%I:%M %p / %b %d, %Y" },
+	{ keyboard_indicators, " [ CAPS : %s ] ",              "%c %n" },
+	{ uptime, " [ UPTIME : %s ] ",              NULL },
+ 	{ ram_perc, "[ RAM : %s% ] ",           NULL },
+	{ cpu_perc, "[ CPU : %s% ] ",           NULL },
+	{ run_command, "[ VOL : %s ] ", 	    "amixer get Master | grep -o '[0-9]*%' | head -n 1"},
+	{ datetime, " [ CAL : %s ]",           "%I:%M %p / %b %d, %Y" },
 };
